@@ -6,51 +6,96 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from collections import defaultdict
 from numpy import multiply
 from math import sqrt
+from nltk.tokenize import word_tokenize
+# from nltk.corpus import Wo
+import os.path as path
+from collections import OrderedDict
+import re
+
+pp = path.abspath(__file__)
+# path.join(pp, filename)
+print pp
+# exit()
+
+def my_tokenize(sentence):
+    ll = word_tokenize(sentence)
+    ll = [ii.lower() for ii in ll if re.search(r'[a-z]+', ii.lower())]
+    return ll
 
 
 class MostRelevantSentence(object):
-    def __init__(self, vectorizer, collection_vecs):
+    def __init__(self, vectorizer, collection_matrix):
         self.vectorizer = vectorizer
-        self.collection_vecs = collection_vecs
-        self.features = vectorizer.get_feature_names()
+        self.collection_matrix = collection_matrix
+        feature_array = vectorizer.get_feature_names()
+        self.features = dict()
+        for fi in range(len(feature_array)):
+            self.features[feature_array[fi]] = fi
 
     def predict(self, qX):
         ppred = []
         for x in qX:
-            ppred.append(self.find_best_match(x)[0])
+            ppred.append(self.find_best_match2(x)[0])
         return ppred
 
-    def find_best_match(self, qs):
+    def find_best_match(self, query_sent):
+        """
+        compare question sentence with each sentence in article, 
+        using cosine distance find the best match
+        
+        :param query_sent: 
+        :return: 
+        """
+
         score = defaultdict(float)
-        vec = self.vectorizer.transform([qs])
+        vec = self.vectorizer.transform([query_sent])
+
         # lenn = len(self.collection_vecs)
-        for ii in range(self.collection_vecs.shape[0]):
-            v1 = self.collection_vecs[ii, :]
+        for ii in range(self.collection_matrix.shape[0]):
+            v1 = self.collection_matrix[ii, :]
             score[ii] = self.cosine_d(v1, vec)
+
+        ss = sorted(score.items(), key=lambda (k, v): v, reverse=True)
+
+        try:
+            assert ss[0][1] >= ss[1][1]
+        except:
+            print ('WTF?')
+        return ss[0]
+
+    def find_best_match2(self, query_sent):
+        """
+        now we implement inverted index to handle query
+        
+        :param query_sent: 
+        :return: 
+        
+        """
+        query_words = my_tokenize(query_sent)
+
+        # query_words = [for i in query_sents if re.search()]
+
+        score = defaultdict(float)
+
+        for w in query_words:
+            try:
+                col_i = self.features[w]
+                inverted_ix = self.collection_matrix[:, col_i]
+                for di in range(inverted_ix.shape[0]):
+                    score[di] += inverted_ix[di, 0]
+            except KeyError:
+                pass
 
         ss = sorted(score.items(), key=lambda (k, v): v, reverse=True)
 
         try:
             assert ss[0][1] > ss[1][1]
         except:
-            print ss
-        return ss[0]
-
-    def find_best_match2(self, qs):
-        score = defaultdict(float)
-        vec = self.vectorizer.transform([qs])
-        # lenn = len(self.collection_vecs)
-        for ii in range(self.collection_vecs.shape[0]):
-            v1 = self.collection_vecs[ii, :]
-            score[ii] = self.cosine_d(v1, vec)
-
-        ss = sorted(score.items(), key=lambda (k, v): v, reverse=True)
-
-        try:
-            assert ss[0][1] > ss[1][1]
-        except:
-            print ss
-        return ss[0]
+            print ss,
+        if ss:
+            return ss[0]
+        else:
+            return -1, 0
 
     def cosine_d(self, a, b):
         # asp = a.shape
@@ -87,13 +132,13 @@ for ff in filename_ls:
 
 
 for col in dataset:
-    tfidf_vectorizer = TfidfVectorizer(max_df=0.95, stop_words='english')
+    tfidf_vectorizer = TfidfVectorizer(max_df=0.95, stop_words='english', tokenizer=my_tokenize)
     document_collections = col['sentences']
     # col['tf-idf'] = tfidf_vectorizer.fit_transform(document_collections)
     # col['vectorizer'] = tfidf_vectorizer
     # col['vocabulary'] = tfidf_vectorizer.get_feature_names()
     col['model'] = MostRelevantSentence(vectorizer=tfidf_vectorizer,
-                                        collection_vecs=tfidf_vectorizer.fit_transform(document_collections))
+                                        collection_matrix=tfidf_vectorizer.fit_transform(document_collections))
 pass
 
 
