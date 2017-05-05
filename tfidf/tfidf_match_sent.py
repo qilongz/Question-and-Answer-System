@@ -7,7 +7,6 @@ from collections import defaultdict
 from numpy import multiply
 from math import sqrt
 from nltk.tokenize import word_tokenize
-# from nltk.corpus import Wo
 import os.path as path
 from collections import OrderedDict
 import re
@@ -32,7 +31,10 @@ pp = '/'.join(pp)
 print pp
 # exit()
 wnl = WNL()
+
+
 def my_tokenize(sentence):
+    """ This the is tokenize function, part of the feature engineering """
 
     sentence = sentence.lower()
     ll = word_tokenize(sentence)
@@ -61,14 +63,17 @@ class MostRelevantSentence(object):
             self.features[feature_array[fi]] = fi
 
         # for j in range(self.collection_matrix.shape[0]):
-        #     print self.collection_matrix[:,j].sum()
-        #     assert self.collection_matrix[j,:].sum() == 1
-
+        #     print self.collection_matrix[j,:].sum()
+        #     time.sleep(0.5)
+            # if self.collection_matrix[j, :].sum() != numpy.float64(1.0):
+            #     x = self.collection_matrix[j, :].sum()
+            #     print type(x)
+            #     raise Exception()
 
     def predict(self, qX):
         ppred = []
         for x in qX:
-            ppred.append(self.find_best_match2(x)[0])
+            ppred.append(self.inverted_index_query(x)[0])
         return ppred
 
     def find_best_match(self, query_sent):
@@ -96,7 +101,7 @@ class MostRelevantSentence(object):
             print ('WTF?')
         return ss[0]
 
-    def find_best_match2(self, query_sent):
+    def inverted_index_query(self, query_sent):
         """
         now we implement inverted index to handle query
         
@@ -178,7 +183,7 @@ for ff in filename_ls:
 
 for col in dataset:
     tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=1, use_idf=True,
-                                       stop_words=None, tokenizer=my_tokenize)
+                                       stop_words='english', tokenizer=my_tokenize, norm='l2', sublinear_tf=True)
     # tfidf_vectorizer = CountVectorizer(max_df=1.0, min_df=1,
     #                                    stop_words=None, tokenizer=my_tokenize)
     document_collections = col['sentences']
