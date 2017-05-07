@@ -18,7 +18,7 @@ from nltk import FreqDist, DictionaryProbDist
 from operator import add
 import math
 import numpy
-
+from nltk.stem.snowball import SnowballStemmer
 
 
 t0 = time.time()
@@ -30,27 +30,16 @@ pp.pop()
 pp = '/'.join(pp)
 print pp
 # exit()
-wnl = WNL()
+stemmer = SnowballStemmer("english")
 
 
 def my_tokenize(sentence):
     """ This the is tokenize function, part of the feature engineering """
-
     sentence = sentence.lower()
     ll = word_tokenize(sentence)
+    lls = [stemmer.stem(ii) for ii in ll if re.search(r'[a-z0-9]+', ii)]
 
-    # llx = nltk.pos_tag(ll)
-    # llw = []
-    # for ww in llx:
-    #     if re.search(r'^V', ww[1]):
-    #         llw.append(wnl.lemmatize(ww[0], 'v'))
-    #     elif re.search(r'^N', ww[1]):
-    #         llw.append(wnl.lemmatize(ww[0], 'n'))
-    #     elif re.search(r'[a-z0-9]+', ww[0]):
-    #         llw.append(ww[0])
-
-    ll = [ii for ii in ll if re.search(r'[a-z0-9]+', ii)]
-    return ll
+    return lls
 
 
 class MostRelevantSentence(object):
