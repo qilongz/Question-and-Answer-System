@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc478f31-5e70-4aa4-9f2e-3a085f6077a3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tfidf/stem_try.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WSTA_Project.iml" afterPath="$PROJECT_DIR$/.idea/WSTA_Project.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tfidf/type_stats.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tfidf/names.csv" afterPath="$PROJECT_DIR$/tfidf/names.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Q&amp;A Project.ipynb" afterPath="$PROJECT_DIR$/Q&amp;A Project.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tfidf/tfidf_match_sent.py" afterPath="$PROJECT_DIR$/tfidf/tfidf_match_sent.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +27,29 @@
           <file leaf-file-name="tfidf_match_sent.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tfidf/tfidf_match_sent.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="252">
-                  <caret line="174" column="92" lean-forward="false" selection-start-line="174" selection-start-column="92" selection-end-line="174" selection-end-column="92" />
+                <state relative-caret-position="540">
+                  <caret line="171" column="7" lean-forward="false" selection-start-line="171" selection-start-column="7" selection-end-line="171" selection-end-column="7" />
+                  <folding>
+                    <element signature="e#0#11#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Q&amp;A Project.ipynb" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Q&amp;A Project.ipynb">
+              <provider selected="true" editor-type-id="ipnb-editor">
+                <state>
+                  <selected id="0" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="type_stats.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tfidf/type_stats.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="630">
+                  <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
                   </folding>
@@ -42,7 +60,7 @@
           <file leaf-file-name="snowball.py" pinned="false" current-in-tab="false">
             <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/nltk/stem/snowball.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-898">
+                <state relative-caret-position="630">
                   <caret line="37" column="59" lean-forward="false" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
                   <folding />
                 </state>
@@ -54,16 +72,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="84">
                   <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="QA_dev.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/data/QA_dev.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="143" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="143" />
                   <folding />
                 </state>
               </provider>
@@ -98,16 +106,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="dev-v1.1.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/data/dev-v1.1.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="565" lean-forward="false" selection-start-line="0" selection-start-column="565" selection-end-line="0" selection-end-column="565" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="tt3.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tfidf/tt3.py">
               <provider selected="true" editor-type-id="text-editor">
@@ -137,7 +135,7 @@
           <file leaf-file-name="ex1.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sk_example/ex1.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="576">
+                <state relative-caret-position="529">
                   <caret line="67" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
                   <folding>
                     <element signature="e#150#187#0" expanded="true" />
@@ -179,6 +177,8 @@
       <find>0.2</find>
       <find>0.1</find>
       <find>0.8</find>
+      <find>sto</find>
+      <find>my</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -199,6 +199,7 @@
         <option value="$PROJECT_DIR$/Q&amp;A Project.ipynb" />
         <option value="$PROJECT_DIR$/Test.ipynb" />
         <option value="$PROJECT_DIR$/tfidf/stem_try.py" />
+        <option value="$PROJECT_DIR$/tfidf/type_stats.py" />
         <option value="$PROJECT_DIR$/tfidf/tfidf_match_sent.py" />
       </list>
     </option>
@@ -210,10 +211,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="664" />
-    <option name="y" value="65" />
+    <option name="x" value="566" />
+    <option name="y" value="112" />
     <option name="width" value="1205" />
-    <option name="height" value="1031" />
+    <option name="height" value="816" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -230,6 +231,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -272,7 +274,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -590,14 +591,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="664" y="65" width="1205" height="1031" extended-state="0" />
+    <frame x="566" y="112" width="1205" height="816" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29939604" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5927524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30646765" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36493936" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52890176" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33034825" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -688,16 +689,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sk_example/ex1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#150#187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tfidf/tfidf_match_sent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -712,7 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="143" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="143" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -736,7 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="565" lean-forward="false" selection-start-line="0" selection-start-column="565" selection-end-line="0" selection-end-column="565" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,7 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,7 +828,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sk_example/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
+        <state relative-caret-position="529">
           <caret line="67" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
             <element signature="e#150#187#0" expanded="true" />
@@ -891,7 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="143" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="143" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -899,15 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="565" lean-forward="false" selection-start-line="0" selection-start-column="565" selection-end-line="0" selection-end-column="565" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tfidf/tt3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4452">
-          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,7 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Q&amp;A Project.ipynb" />
     <entry file="file://$PROJECT_DIR$/data/aa1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -948,7 +925,7 @@
     </entry>
     <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/nltk/stem/snowball.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-898">
+        <state relative-caret-position="630">
           <caret line="37" column="59" lean-forward="false" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
           <folding />
         </state>
@@ -962,10 +939,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tfidf/tt3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4452">
+          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q&amp;A Project.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tfidf/type_stats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tfidf/tfidf_match_sent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="174" column="92" lean-forward="false" selection-start-line="174" selection-start-column="92" selection-end-line="174" selection-end-column="92" />
+        <state relative-caret-position="540">
+          <caret line="171" column="7" lean-forward="false" selection-start-line="171" selection-start-column="7" selection-end-line="171" selection-end-column="7" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

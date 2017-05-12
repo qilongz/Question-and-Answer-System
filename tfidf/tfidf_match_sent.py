@@ -4,20 +4,14 @@ filename_ls = ['data/QA_train.json']
 dataset = []
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from collections import defaultdict
-from numpy import multiply
-from math import sqrt
+
 from nltk.tokenize import word_tokenize
 import os.path as path
 from collections import OrderedDict
 import re
-import nltk
-from nltk.stem.wordnet import WordNetLemmatizer as WNL
+
 import time
-from sklearn.feature_extraction import DictVectorizer
-from nltk import FreqDist, DictionaryProbDist
-from operator import add
-import math
-import numpy
+
 from nltk.stem.snowball import SnowballStemmer
 
 
@@ -42,7 +36,7 @@ def my_tokenize(sentence):
     return lls
 
 
-class MostRelevantSentence(object):
+class MostRelevantSentenceModel(object):
     def __init__(self, vectorizer, collection_matrix):
         self.vectorizer = vectorizer
         self.collection_matrix = collection_matrix
@@ -64,31 +58,6 @@ class MostRelevantSentence(object):
         for x in qX:
             ppred.append(self.inverted_index_query(x)[0])
         return ppred
-
-    def find_best_match(self, query_sent):
-        """
-        compare question sentence with each sentence in article, 
-        using cosine distance find the best match
-        
-        :param query_sent: 
-        :return: 
-        """
-
-        score = defaultdict(float)
-        vec = self.vectorizer.transform([query_sent])
-
-        # lenn = len(self.collection_vecs)
-        for ii in range(self.collection_matrix.shape[0]):
-            v1 = self.collection_matrix[ii, :]
-            score[ii] = self.cosine_d(v1, vec)
-
-        ss = sorted(score.items(), key=lambda (k, v): v, reverse=True)
-
-        try:
-            assert ss[0][1] >= ss[1][1]
-        except:
-            print ('WTF?')
-        return ss[0]
 
     def inverted_index_query(self, query_sent):
         """
@@ -123,20 +92,6 @@ class MostRelevantSentence(object):
             return ss[0]
         else:
             return -1, 0
-
-    def cosine_d(self, a, b):
-        # asp = a.shape
-        # bsp = b.shape
-        # bb = b.transpose()
-        # xx = multiply(a, b.transpose())
-        dotp = multiply(a, b.transpose()).sum()
-        base = sqrt(multiply(multiply(a, a.transpose()).sum(), multiply(b, b.transpose()).sum()))
-        # assert base == 1.0
-        # print base
-        if base:
-            return dotp / base
-        else:
-            return 0
 
 
 def build_model_and_evaluate(clf, X, y, report=False):
@@ -173,13 +128,12 @@ for ff in filename_ls:
 for col in dataset:
     tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=1, use_idf=True,
                                        stop_words='english', tokenizer=my_tokenize, norm='l2', sublinear_tf=True)
-    # tfidf_vectorizer = CountVectorizer(max_df=1.0, min_df=1,
-    #                                    stop_words=None, tokenizer=my_tokenize)
+
     document_collections = col['sentences']
 
     tfidf_matrix = tfidf_vectorizer.fit_transform(document_collections)
-    col['model'] = MostRelevantSentence(vectorizer=tfidf_vectorizer,
-                                        collection_matrix=tfidf_matrix)
+    col['model'] = MostRelevantSentenceModel(vectorizer=tfidf_vectorizer,
+                                             collection_matrix=tfidf_matrix)
 pass
 
 
@@ -216,6 +170,5 @@ for col in dataset:
     #     exit()
 
 xxx = 0
-
 
 print 'EXEC:', time.time() - t0
