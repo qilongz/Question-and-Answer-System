@@ -1,6 +1,6 @@
 import json
 from sklearn import metrics
-filename_ls = ['data/QA_train.json']
+filename_ls = ['data/QA_test.json']
 dataset = []
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from collections import defaultdict
@@ -84,10 +84,6 @@ class MostRelevantSentenceModel(object):
 
         ss = sorted(score.items(), key=lambda (k, v): v, reverse=True)
 
-        # try:
-        #     assert ss[0][1] >= ss[1][1]
-        # except:
-        #     print ss,
         if ss:
             return ss[0]
         else:
