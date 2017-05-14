@@ -1,8 +1,4 @@
-from gensim.summarization.bm25 import BM25, PARAM_K1,PARAM_B, EPSILON
-PARAM_K1 = 1.9
-# from gensim.summarization.bm25 import BM25, PARAM_K1
-print PARAM_K1
-exit()
+
 import json
 from sklearn import metrics
 filename_ls = ['data/QA_train.json']
@@ -54,6 +50,7 @@ for col in dataset:
     document_collections = col['sentences']
 
     tfidf_matrix = tfidf_vectorizer.fit_transform(document_collections)
-    col['model'] = MostRelevantSentenceModel(vectorizer=tfidf_vectorizer,
-                                             collection_matrix=tfidf_matrix)
+    col['model'] = BestMatchBM2PredictionModel()
+
+
 pass
