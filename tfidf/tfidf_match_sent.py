@@ -7,7 +7,6 @@ from collections import defaultdict
 
 from nltk.tokenize import word_tokenize
 import os.path as path
-from collections import OrderedDict
 import re
 
 import time

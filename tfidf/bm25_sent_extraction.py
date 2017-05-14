@@ -12,12 +12,9 @@ stop_english = set(stopwords.words('english'))
 filename_ls = ['data/QA_dev.json']
 dataset = []
 t0 = time.time()
-parent_path = path.abspath(__file__)
+parent_path = path.dirname(__file__)
 # path.join(pp, filename)
-parent_path = parent_path.split('/')
-parent_path.pop()
-parent_path.pop()
-parent_path = '/'.join(parent_path)
+parent_path = path.dirname(parent_path)
 print parent_path
 # exit()
 stemmer = SnowballStemmer("english")
@@ -96,7 +93,7 @@ for col in dataset:
         t['answer'] = ans_y[t['question_i']].encode('utf-8')
         # psss =
         # t['prediction_sentence'] = str(col['sentences'][t['prediction_i'][0]]).encode('utf-8')
-        t['actual_y_sentence'] = col['sentences'][t['actual_yi']].encode('utf-8')
+        t['actual_y_sentence'] = col['sentences'][t['actual_yi']].encode('utf-8').decode('utf-8')
         writer.writerow(t)
 
     ddi += 1
