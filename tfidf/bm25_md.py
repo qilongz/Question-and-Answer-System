@@ -28,7 +28,7 @@ def dict_add(d1, d2):
 
 class BM25_Model(object):
 
-    def __init__(self, document_collection, K1=1.5, B=0.75, K3=1.0, EPS=0.25, tokenizer=None):
+    def __init__(self, document_collection, K1=0.3, B=0.01, K3=1.0, EPS=0.25, tokenizer=None):
         if not tokenizer:
             self.tokenizer = my_tokenize
         else:
@@ -57,12 +57,12 @@ class BM25_Model(object):
                 self.df[word] += 1
                 self.inverted_index[word].append(index)
 
-        for word, freq in iteritems(self.df):
+        for word, freq in self.df.items():
             self.bm25_idf[word] = math.log(self.document_collection_length - freq + 0.5) - math.log(freq + 0.5)
             # self.idf_1 = math.log((self.document_collection_length - freq))
         self.average_idf = sum(map(lambda k: float(self.bm25_idf[k]), self.bm25_idf.keys())) / len(self.bm25_idf.keys())
 
-    def predict(self, queryX, limit=1):
+    def predict(self, queryX, limit=3):
         q_prediction = []
         for query in queryX:
             ls = self.bm25_get_most_relevant(query)[:limit]
