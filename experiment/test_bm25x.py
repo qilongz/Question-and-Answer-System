@@ -1,6 +1,6 @@
 import gensim
 from gensim import corpora
-from gensim.similarities.
+# from gensim.similarities.
 import math
 
 class BM25 :
