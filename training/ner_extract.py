@@ -33,7 +33,7 @@ def _byteify(data, ignore_dicts = False):
 
 with open(os.path.join(parentdir, "data/QA_dev.json")) as json_file:
     json_data = json_load_byteified(json_file)
-print 'import success'
+print "import success"
 
 
 import os

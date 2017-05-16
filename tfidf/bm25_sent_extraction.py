@@ -104,3 +104,4 @@ for col in dataset:
 print 'EXEC:', time.time() - t0
 
 print 'Finally................ accuracy:', kii/total_i
+

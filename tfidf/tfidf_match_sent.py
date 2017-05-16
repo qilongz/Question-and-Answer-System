@@ -12,7 +12,7 @@ import re
 import time
 
 from nltk.stem.snowball import SnowballStemmer
-
+stemmer = SnowballStemmer("english")
 
 t0 = time.time()
 pp = path.abspath(__file__)
@@ -23,7 +23,7 @@ pp.pop()
 pp = '/'.join(pp)
 print pp
 # exit()
-stemmer = SnowballStemmer("english")
+
 
 
 def my_tokenize(sentence):
